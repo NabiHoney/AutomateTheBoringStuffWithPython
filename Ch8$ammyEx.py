@@ -1,50 +1,37 @@
+"""Makin' Sammiches Pylint improved."""
 import pyinputplus as pyip
-
 custch = []
- 
 def order():
+    """Order inputs."""
     bread = pyip.inputMenu(['Rye', 'Sourdough', 'Herb'], numbered=True)
     custch.append(bread)
     protein = pyip.inputMenu(['Beef', 'Egg', 'Lamb', 'Tofu', 'Chickpea'], numbered=True)
     custch.append(protein)
-    chezYa = pyip.inputYesNo(prompt="Cheese? Enter 'y' for yes, 'n' for no: ")
-    for i in chezYa:
+    chezya = pyip.inputYesNo(prompt="Cheese? Enter 'y' for yes, 'n' for no: ")
+    for i in chezya:
         if i == 'y':
-            chezKind = pyip.inputMenu(['Mercan', 'Stinky', 'Tasteless'], numbered=True)
-            custch.append(chezKind)  
-        else:
-            next
-    mayoYa = pyip.inputYesNo("Mayo - y/n: ")
-    for i in mayoYa:
+            chezkind = pyip.inputMenu(['Mercan', 'Stinky', 'Tasteless'], numbered=True)
+            custch.append(chezkind)
+    mayoya = pyip.inputYesNo("Mayo - y/n: ")
+    for i in mayoya:
         if i == 'y':
             custch.append('mayo')
-        else:
-            next 
-    goYa = pyip.inputYesNo("Gochujang - y/n: ")
-    for i in goYa:
+    goya = pyip.inputYesNo("Gochujang - y/n: ")
+    for i in goya:
         if i == 'y':
             custch.append('gochujang')
-        else:
-            next 
-    letYa = pyip.inputYesNo("Lettuce - y/n: ")
-    for i in letYa:
+    letya = pyip.inputYesNo("Lettuce - y/n: ")
+    for i in letya:
         if i == 'y':
             custch.append('lettuce')
-        else:
-            next 
-    materYa=pyip.inputYesNo("Tomato - y/n: ")
-    for i in materYa:
+    materya=pyip.inputYesNo("Tomato - y/n: ")
+    for i in materya:
         if i == 'y':
             custch.append('tomato')
-        else:
-            next 
-
 order()
-howManySammy = pyip.inputInt('Enter number of Sammies: ', min=1)
-
-rtot = len(custch)
-total = int(rtot) * int(howManySammy) 
-
+how_many_sammy = pyip.inputInt('Enter number of Sammies: ', min=1)
+R = len(custch)
+T = int(R) * int(how_many_sammy)
 print(custch)
-print(rtot)
-print('$' + format(total, ',.2f'))
+print(R)
+print('$' + format(T, ',.2f'))
